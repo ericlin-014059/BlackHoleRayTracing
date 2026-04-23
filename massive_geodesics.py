@@ -3,6 +3,15 @@ import matplotlib.pyplot as plt
 
 class massive_geodesics:
     def __init__(self, b, v, M):
+        """
+        b : impact parameter
+        v : velocity (when c=1)
+        M : blackhole Mass
+        E : energy
+        L : angular momentum
+        r_crtical : critical distance
+
+        """
         if v >= 1:
             raise ValueError("The speed of a particle should not exceed the speed of light")
 
@@ -39,7 +48,7 @@ class massive_geodesics:
         return np.max(np.real(real_roots)).item()
 
     def check_in_or_out(self):
-        return abs(self.r - self.r_critical) < 1e4
+        return abs(self.r - self.r_critical) < 1e-4
     
     def trajectory(self, step = 0.01):
         while (self.phi < 0) and (self.r < 50):
