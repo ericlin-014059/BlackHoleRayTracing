@@ -55,5 +55,6 @@ class massive_geodesics:
             self.ingoing = self.check_in_or_out()
 
             dr = np.sqrt(self.E ** 2 - (1 - 2 * self.central_mass) / self.r)
+            dphi = self.L / self.r ** 2
     
     
